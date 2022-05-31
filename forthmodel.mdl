@@ -1,0 +1,123 @@
+{UTF-8}
+Staff Overtime  = A FUNCTION OF( Sales,Service Capacity)
+	~	
+	~		|
+
+Staff Burnout  = A FUNCTION OF( Staff Overtime)
+	~	
+	~		|
+
+Service Capacity  = A FUNCTION OF( )
+	~	
+	~		|
+
+Staff Motivation  = A FUNCTION OF( Sales,Staff Burnout)
+	~	
+	~		|
+
+Customer Satisfaction  = A FUNCTION OF( Service Quality)
+	~	
+	~		|
+
+Sales  = A FUNCTION OF( Customer Satisfaction)
+	~	
+	~		|
+
+Service Quality  = A FUNCTION OF( Staff Motivation)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Staff Motivation,527,143,56,27,8,3,0,8,0,0,0,0,-1--1--1,0-0-0,|18||0-0-0,0,0,0,0,0,0
+10,2,Service Quality,773,151,38,27,8,3,0,8,0,0,0,0,-1--1--1,0-0-0,|18||0-0-0,0,0,0,0,0,0
+10,3,Sales,529,314,27,15,8,3,0,8,0,0,0,0,-1--1--1,0-0-0,|18||0-0-0,0,0,0,0,0,0
+10,4,Customer Satisfaction,773,305,59,27,8,3,0,8,0,0,0,0,-1--1--1,0-0-0,|18||0-0-0,0,0,0,0,0,0
+1,5,1,2,1,0,43,12,2,192,0,-1--1--1,|12||0-0-0,1|(650,92)|
+1,6,2,4,1,0,43,12,2,192,0,-1--1--1,|12||0-0-0,1|(795,227)|
+1,7,4,3,1,0,43,12,2,193,0,-1--1--1,|12||0-0-0,1|(640,341)|
+1,8,3,1,1,0,43,12,2,192,0,-1--1--1,|12||0-0-0,1|(476,239)|
+12,9,0,642,227,20,20,4,7,0,8,-1,0,0,0,-1--1--1,0-0-0,|18||0-0-0,0,0,0,0,0,0
+R
+12,10,0,883,122,71,28,8,135,0,16,0,0,0,0,-1--1--1,0-0-0,|12|I|0-0-0,0,0,0,0,0,0
+When staffs are motivated, they have better survice.
+12,11,0,639,396,124,38,8,135,0,16,0,0,0,0,-1--1--1,0-0-0,|12|I|0-0-0,0,0,0,0,0,0
+When customers are satisfiyed, it is highly possible that they come again. But it takes some time  for thier next visit.
+12,12,0,680,57,90,28,8,7,0,16,-1,0,0,0,-1--1--1,0-0-0,|12|I|0-0-0,0,0,0,0,0,0
+When sale goes well, staffs feel happy and get more motivation to work.
+12,13,0,308,52,166,15,3,135,0,29,-1,0,0,0,255-128-0,255-128-0,|16|B|255-128-0,0,0,0,0,0,0
+Causual loop diagram for shop sales
+10,14,Staff Burnout,289,152,69,13,8,3,0,8,0,0,0,0,-1--1--1,0-0-0,|18||0-0-0,0,0,0,0,0,0
+10,15,Staff Overtime,278,295,48,27,8,3,0,8,0,0,0,0,-1--1--1,0-0-0,|18||0-0-0,0,0,0,0,0,0
+10,16,Service Capacity,140,383,46,27,8,3,0,8,0,0,0,0,-1--1--1,0-0-0,|18||0-0-0,0,0,0,0,0,0
+1,17,3,15,1,0,43,12,2,192,0,-1--1--1,|12||0-0-0,1|(426,357)|
+1,18,15,14,1,0,43,12,2,193,0,-1--1--1,|12||0-0-0,1|(260,240)|
+1,19,14,1,1,0,45,12,3,192,0,255-0-0,|12||0-0-0,1|(370,103)|
+1,20,16,15,1,0,0,12,2,192,0,-1--1--1,|12||0-0-0,1|(204,302)|
+12,21,0,395,237,20,20,5,7,0,8,-1,0,0,0,-1--1--1,0-0-0,|18||0-0-0,0,0,0,0,0,0
+B
+12,22,0,354,393,66,28,8,7,0,16,-1,0,0,0,-1--1--1,0-0-0,|12|I|0-0-0,0,0,0,0,0,0
+When sales go well, staffs have to work overtime.
+12,23,0,168,204,74,28,8,7,0,16,-1,0,0,0,-1--1--1,0-0-0,|12|I|0-0-0,0,0,0,0,0,0
+Staffs would burnout after a long time over work.
+12,24,0,101,297,78,19,8,7,0,16,-1,0,0,0,-1--1--1,0-0-0,|0|I|0-0-0,0,0,0,0,0,0
+There is a limitaion for working time of staff.
+///---\\\
+:L<%^E!@
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+5:Staff Burnout
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:0
+25:0
+26:0
+75:
+43:

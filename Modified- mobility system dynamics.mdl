@@ -1,0 +1,243 @@
+{UTF-8}
+PT Trip Percentage Rate=
+	EXP(Public Transport Utility)/(EXP(Car Utility)+EXP(Public Transport Utility))
+	~	
+	~		|
+
+Car trip percent Rate=
+	EXP(Car Utility)/(EXP(Car Utility)+EXP(Public Transport Utility))
+	~	
+	~		|
+
+Growth Rate of PT trip=
+	PT Trip Percentage Rate*Trip Demands Growth
+	~	
+	~		|
+
+Growth Rate of Car trip=
+	Car trip percent Rate*Trip Demands Growth
+	~	
+	~		|
+
+Average car trip time=
+	Accepted Car Travel time*Traffic Congestion
+	~	
+	~		|
+
+Affected Average Cost car trip=
+	20000
+	~	
+	~		|
+
+Affected Car ownership=
+	500000
+	~	
+	~		|
+
+Affected Waiting time=
+	10
+	~	
+	~		|
+
+AffectedAverage time of PT Travel=
+	20
+	~	
+	~		|
+
+Traffic Congestion=
+	1+((Trips by Car/((100*Road constraction rate*0.05+1)*Road Capacity))^4 )*0.15
+	~	
+	~		|
+
+Public Transport Utility=
+	5.8-0.0053*AffectedAverage time of PT Travel-0.002*Average cost of PT travel-0.1*Affected Waiting time\
+		+PT Aaccessibility*3
+	~	
+	~		|
+
+Car Utility=
+	6.4-0.0001*Affected Average Cost car trip-0.08575*Average car trip time+4.602e-06*Affected Car ownership
+	~	
+	~		|
+
+Road constraction rate=
+	0.2
+	~	
+	~		|
+
+Trips by Public transport= INTEG (
+	Growth Rate of PT trip,
+		500000)
+	~	
+	~		|
+
+Trips by Car= INTEG (
+	Growth Rate of Car trip,
+		185000)
+	~	
+	~		|
+
+Accepted Car Travel time=
+	20
+	~	
+	~		|
+
+Average cost of PT travel=
+	250
+	~	
+	~		|
+
+PT Aaccessibility=
+	0.5
+	~	
+	~		|
+
+Road Capacity=
+	500000
+	~	
+	~		|
+
+Trip Demands Growth=
+	100000
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 2030
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 2000
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Year [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Year [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,90,3
+10,1,Affected Car ownership,18,332,32,14,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Trip Demands Growth,274,59,35,14,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,Trips by Car,56,162,30,15,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,Trips by Public transport,343,154,43,17,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,Public Transport Utility,392,310,40,14,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,AffectedAverage time of PT Travel,403,381,53,14,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,7,Average cost of PT travel,501,370,38,14,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,PT Aaccessibility,542,313,41,8,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,9,6,5,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(393,353)|
+1,10,7,5,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(444,334)|
+1,11,8,5,1,0,0,0,0,64,0,-1--1--1,,1|(461,298)|
+10,12,Car Utility,103,265,25,8,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,13,Average car trip time,-45,284,39,14,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,14,Affected Average Cost car trip,137,350,43,14,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,15,48,492,157,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,16,18,4,4,0,0,22,0,0,0,-1--1--1,,1|(417,158)|
+1,17,18,15,100,0,0,22,0,0,0,-1--1--1,,1|(470,158)|
+11,18,48,453,158,5,6,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,19,Growth Rate of PT trip,453,178,38,14,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,20,1,12,1,0,0,0,0,64,0,-1--1--1,,1|(52,295)|
+1,21,14,12,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(97,319)|
+1,22,13,12,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(28,266)|
+1,23,2,18,1,0,0,0,0,64,0,-1--1--1,,1|(418,94)|
+10,24,Traffic Congestion,-116,129,44,8,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,25,3,24,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(4,118)|
+1,26,24,13,1,0,43,0,3,64,0,0-0-128,|12||0-0-0,1|(-121,208)|
+10,27,Accepted Car Travel time,-47,201,35,14,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,28,Road Capacity,-52,64,36,8,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,29,28,24,1,0,0,0,0,64,0,-1--1--1,,1|(-107,103)|
+1,33,27,13,1,0,0,0,0,64,0,-1--1--1,,1|(-63,248)|
+12,34,48,183,160,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,35,37,3,4,0,0,22,0,0,0,-1--1--1,,1|(104,157)|
+1,36,37,34,100,0,0,22,0,0,0,-1--1--1,,1|(152,157)|
+11,37,48,127,157,5,6,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,38,Growth Rate of Car trip,127,178,38,14,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,39,2,37,1,0,0,0,0,64,0,-1--1--1,,1|(168,76)|
+10,40,Affected Waiting time,313,364,41,14,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,41,40,5,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(336,340)|
+10,42,Car trip percent Rate,192,244,33,5,8,3,0,8,0,0,0,0,0-0-0,0-0-0,|8||0-0-0,0,0,0,0,0,0
+1,43,12,42,1,0,0,0,0,64,0,-1--1--1,,1|(125,245)|
+12,45,3439586224,97,667,179,169,3,188,0,0,2,0,0,0,0,0,0,0,0,0
+Car trip percent Rate,Graph
+10,46,Road constraction rate,-165,60,40,14,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,47,46,24,1,0,0,0,0,64,0,-1--1--1,,1|(-160,94)|
+12,48,3439586232,773,667,162,170,3,188,0,0,2,0,0,0,0,0,0,0,0,0
+Traffic Congestion,Graph
+12,49,3439586240,97,985,181,146,3,188,0,0,2,0,0,0,0,0,0,0,0,0
+Public Transport Utility,Graph
+12,50,3439586248,1170,1004,194,164,3,188,0,0,2,0,0,0,0,0,0,0,0,0
+Trips by Car,Graph
+12,51,3439586256,795,1002,179,164,3,188,0,0,2,0,0,0,0,0,0,0,0,0
+Trips by Public transport,Graph
+12,52,3439586264,446,985,169,148,3,188,0,0,2,0,0,0,0,0,0,0,0,0
+Car Utility,Graph
+12,53,3439586272,1099,668,163,170,3,188,0,0,2,0,0,0,0,0,0,0,0,0
+Average car trip time,Graph
+10,54,PT Trip Percentage Rate,397,251,39,5,8,131,0,8,0,0,0,0,0-0-0,0-0-0,|8||0-0-0,0,0,0,0,0,0
+1,56,5,54,0,0,0,0,0,64,0,-1--1--1,,1|(393,282)|
+12,57,3439586280,443,667,167,170,3,188,0,0,2,0,0,0,0,0,0,0,0,0
+PT Trip Percentage Rate,Graph
+1,58,54,19,1,0,0,0,0,64,0,-1--1--1,,1|(462,203)|
+1,59,42,37,1,0,0,0,0,64,0,-1--1--1,,1|(150,209)|
+1,60,12,54,1,0,0,0,0,64,0,-1--1--1,,1|(297,288)|
+1,61,5,42,1,0,0,0,0,64,0,-1--1--1,,1|(215,317)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,100,0
+12,1,1115474,195,257,165,167,3,156,0,0,2,0,0,0,0,0,0,0,0,0
+Average car trip time,Graph
+12,2,1837216,563,227,171,200,3,156,0,0,2,0,0,0,0,0,0,0,0,0
+Traffic Congestion,Graph
+12,3,1967918,192,595,167,155,3,188,0,0,2,0,0,0,0,0,0,0,0,0
+Car trip percent Rate,Graph
+12,4,3803338,566,592,170,142,3,188,0,0,2,0,0,0,0,0,0,0,0,0
+Average car trip time,Graph
+///---\\\
+:L<%^E!@
+1:Current4.vdfx
+9:Current4
+23:0
+15:0,0,0,0,0,0
+19:90,0
+27:2,
+34:0,
+42:1
+72:0
+73:0
+4:Time
+5:PT Trip Percentage Rate
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:0
+41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:2000
+25:2030
+26:2030
+75:
+43:
