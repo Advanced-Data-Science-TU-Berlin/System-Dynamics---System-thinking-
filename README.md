@@ -1,1 +1,1 @@
-# System-Dynamics---System-thinking-
+# System Dynamics-System thinking
